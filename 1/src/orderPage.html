@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Alan's MenuServer Restaurant</title>
+
+     <!--SOURCE: Materialize Starter Template -- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="header-restaurant" role="navigation">
+        <div>
+            <a href="#" class="custom-header">Alan's MenuServer Restaurant</a>
+            <ul class="right hide-on-med-and-down">
+                    <li><a href="http://www.gmail.com">Login</a></li>
+                    <li><a href="about.html">About</a></li>
+            </ul>
+            <br>
+        </div>
+    </nav>
+
+    <nav class="nav-extended">
+        <div class="page-footer orange">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="index.html"><b>Home</b></a></li>
+                <li class="tab"><a class="active" href="#test2"><b>Order</b></a></li>
+                <li class="tab"><a href="orderHistory.html"><b>Order history</b></a></li>
+                <li class="tab"><a href="manage.html"><b>Manage</b></a></li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="container">
+        <ul class="tabs header center">
+            <li class="tab"><a class="active" href="#test1">Breakfast</a></li>
+            <li class="tab disabled"><a href="#test2">Lunch</a></li>
+            <li class="tab disabled"><a href="#test3">Dinner</a></li>
+            <li class="tab disabled"><a href="#test3">Dessert</a></li>
+            <li class="tab disabled"><a href="#test3">Beverages</a></li>
+            
+        </ul>
+    </div>
+    <div class="container right-align">
+    <div class="dropdown-store">
+            <span class="btn-large waves-effect waves-light orange">Select store</span>
+            <div class="dropdown-content-store">
+            <ul>
+                <li>Centre Ave Store</li>
+                <li>Morewood Store</li>
+                <li>Downtown Store</li>
+            </ul>
+            </div>
+          </div>
+        </div>
+    <br>
+    <div class="container center-align">
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
+                    <th >Quantity</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Perfect French Toast</td>
+                    <td>$12.00</td>
+                    <td><input id="input-width" value="1"></td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>Waffle affair</td>
+                    <td>$10.75</td>
+                    <td><input id="input-width" value="2"></td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>Scrambled eggs</td>
+                    <td>$9.15</td>
+                    <td><input id="input-width" value="4"></td>
+                    <td>X</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container right-align">
+            <h6><b>Subtotal:</b>&nbsp;$43.16</h4>
+    </div><br>
+    <div class="row right">
+        <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Place Order</a>
+    </div>
+    <div class="row left">
+        <a href="index.html" id="download-button" class="btn-large waves-effect waves-light orange">Cancel</a>
+    </div>

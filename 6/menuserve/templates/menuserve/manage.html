@@ -1,0 +1,41 @@
+{% extends "menuserve/header.html" %}
+{% block title %}Manage Item{% endblock %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+  <div class="container center" style="padding: 1em;">
+    <a href="{% url 'edit_store' %}" class="btn-floating btn-large waves-effect waves-light red"><i
+        class="material-icons">add</i></a><b>Create/Edit Stores</b>
+    <a href="{% url 'edit_employee' %}" class="btn-floating btn-large waves-effect waves-light red"><i
+        class="material-icons">add</i></a><b>Create/Edit Employees</b>
+    <a href="{% url 'edit_manager' %}" class="btn-floating btn-large waves-effect waves-light red"><i
+        class="material-icons">add</i></a><b>Create/Edit Managers</b>
+  </div>
+  <form method="POST"></form>
+  <div class="items-list ">
+    <div class="border-list">
+      <ol>
+        {% for post in posts %}
+        <li>
+          <p class="border-list">
+            {% if post.image %}
+            <img src="{{ post.image.url }}" width="120" />
+            {% endif %}<br>
+            <em>{{ post.item_name }} ...................... ${{ post.price }}
+              <a class="manual-margin" href="{% url 'itemedit' id=post.id %}"><button
+                  class="waves-effect waves-light btn" type="button">Edit</button></a>
+              <a href="{% url 'itemdelete' id=post.id %}"><button class="waves-effect waves-light btn"
+                  type="button">X</button></a> </a></em>
+            {{ post.content_description }}
+        </li>
+        {% endfor %}
+        <b><a href="{% url 'create' %}"">+ Add items</a></b>
+          
+        </ol>
+        </div>
+      </div>
+      <br><br>
+    </form>
+    </div>
+  </div>
+  {% endblock %}

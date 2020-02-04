@@ -1,0 +1,5 @@
+Feedback provided by Steven Shan (TA) on 09/03/2019
+
+- To add Store location (dropdown) in Order page and Order History page as shown in the revised wireframe.
+- Make the Menu Management page editable
+

@@ -1,0 +1,14 @@
+{% extends 'menuserve/header.html' %}
+{% block title %}Register{% endblock %}
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h6>Please Sign up to order lipsmacking food from Alan's Menuserve restaurant</h6>
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>    
+{% endblock %}
+{% block footer %}{% endblock %}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% include 'menuserve/header.html' %}
+<html lang="en">
+<title>Add Order</title>
+<div class="container">
+    <form method="POST">{% csrf_token %}
+        <h5>Create order</h5>
+        {{ form.as_p }}
+        <a href="{% url 'orderhistory' %}"><button class="btn-large waves-effect waves-light orange">Confirm
+                Order</button></a>
+        <a href="{% url 'index' %}"><button class="btn-large waves-effect waves-light orange">Cancel</button></a>
+    </form>
+</div>

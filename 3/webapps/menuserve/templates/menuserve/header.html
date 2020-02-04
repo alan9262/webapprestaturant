@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+
+    <!--SOURCE: Materialize Starter Template -- CSS  -->
+    {% load staticfiles %}
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/init.js' %}"></script>
+</head>
+
+<body>
+    {{ request.user }}
+    <nav class="header-restaurant" role="navigation">
+        <div>
+            <a href="#" class="custom-header">Alan's MenuServer Restaurant</a>
+            <ul class="right hide-on-med-and-down">
+                <li class="tab"><a href="{% url 'manage' %}"><b>Manage</b></a></li>
+                <li><a href="http://www.gmail.com">Login</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+            <br>
+        </div>
+    </nav>
+    <form action="#" method="POST">
+        <nav class="nav-extended">
+            <div class="page-footer orange">
+                <ul class="tabs tabs-transparent">
+                    <li class="tab"><a class="active" href="{% url 'index' %}"><b>Home</b></a></li>
+                    <li class="tab"><a class="active" href="{% url 'order' %}"><b>Order</b></a></li>
+                    <li class="tab"><a class="active" href="{% url 'orderhistory' %}"><b>Order history</b></a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </form>
+
+</body>
+
+</html>

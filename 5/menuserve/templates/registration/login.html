@@ -1,0 +1,21 @@
+{% extends "menuserve/header.html" %}
+{% block navbar %} {% endblock %}
+{% block title %}
+Login to Alan's Menuserve Restaurant
+{% endblock %}
+
+{% block content %}
+<div class="col s12 14 offset-14">
+    <form method="POST" class="container">
+        <h6>Login</h6>
+        {% csrf_token %}
+        Username: {{ form.username }}
+        Password: {{ form.password1 }}
+        <p>Don't have an account? Create one <a href="/register">here.</a></p>
+        <a href="{% url 'index' %}"><button type="submit"> Login </button></a>
+    </form>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

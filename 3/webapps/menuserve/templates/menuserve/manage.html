@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "menuserve/header.html" %}
+{% load staticfiles %}
+
+<div class="container">
+  <div class="container center" style="padding: 1em;">
+    <a href="{% url 'edit_store' %}" class="btn-floating btn-large waves-effect waves-light red"><i
+        class="material-icons">add</i></a><b>Create/Edit Stores</b>
+    <a href="{% url 'edit_employee' %}" class="btn-floating btn-large waves-effect waves-light red"><i
+        class="material-icons">add</i></a><b>Create/Edit Employees</b>
+    <a href="{% url 'edit_manager' %}" class="btn-floating btn-large waves-effect waves-light red"><i
+        class="material-icons">add</i></a><b>Create/Edit Managers</b>
+  </div>
+  <h3 class="header center orange-text">A perfect blend of taste, quality and price</h3>
+  <div class="row center">
+    <img class="circle responsive-img" src="{% static 'media/bf1.jpeg' %}">
+    <img class="circle responsive-img" src="{% static 'media/bf2.jpeg' %}">
+    <img class="circle responsive-img" src="{% static 'media/bf3.jpeg' %}">
+    <h6 class="header col s12 bold">Today's Special</h6>
+    <h7 class="header col s12 light"><i>Order Timings </i> <b>|</b> <i>7:00 AM to 12:00 PM</i></h5>
+      </h6>
+      <hr>
+  </div>
+  <form method="POST">
+    <div class="items-list ">
+      <div class="border-list">
+        <ol>
+          {% for post in posts %}
+          <li>
+            <p class="border-list"><em>{{ post.item_name }} ...................... ${{ post.price }}
+                <a class="manual-margin" href="{% url 'itemedit' id=post.id %}"><button
+                    class="waves-effect waves-light btn" type="button">Edit</button></a>
+                <a href="{% url 'itemdelete' id=post.id %}"><button class="waves-effect waves-light btn"
+                    type="button">X</button></a> </a></em>
+              {{ post.content_description }}</p>
+          </li>
+          {% endfor %}
+          <b><a href="{% url 'create' %}"">+ Add items</a></b>
+          
+        </ol>
+        </div>
+      </div>
+      <br><br>
+    </form>
+    </div>
+  </div>
+  {% include "menuserve/footer.html" %}
+
+</body>
+
+</html>

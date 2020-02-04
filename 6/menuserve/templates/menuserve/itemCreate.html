@@ -1,0 +1,18 @@
+{% extends "menuserve/header.html" %}
+{% block title %}Create item{% endblock %}
+{% block content %}
+<title>Create Item</title>
+<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    <div class="container">
+        <h6>Item Create</h6>
+        Item name : {{ form.item_name  }}<br>
+        Content description: {{ form.content_description  }}<br>
+        Price: {{ form.price  }}<br>
+        Featured: {{ form.featured  }}<br>
+        Image: {{ form.image }}<br>
+        <div class="row center">
+            <input class="btn-large waves-effect waves-light orange" type="submit" value="save" />
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "menuserve/header.html" %}
+{% block title %}Edit Item{% endblock %}
+{% block content %}
+<div class="container">
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn-large waves-effect waves-light orange" type="submit" value="save" />
+    </form>
+</div>
+{% endblock %}

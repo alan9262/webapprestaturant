@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<form method="POST">{% csrf_token %}
+    <div class="dropdown-store"><h1>Add order</h1>
+        </div>
+        {{ form.as_p }}
+        Subtotal : {{ totalamount }}
+    </div>
+    <a href="{% url 'orderhistory' %}"><button>Confirm Order</button></a>
+    <a href="{% url 'index' %}" id="download-button" class="btn-large waves-effect waves-light orange">Cancel</a>
+</form>
+</html>

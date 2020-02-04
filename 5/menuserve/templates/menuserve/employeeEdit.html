@@ -1,0 +1,21 @@
+{% extends "menuserve/header.html" %}
+{% block title %}Edit Employee{% endblock %}
+{% block content %}
+<form method="POST"> {% csrf_token %}
+    <div class="container">
+        <br>
+        {% for emp in employees %}
+        {{ emp }}
+        <a href="{% url 'employeeedit' id=emp.id %}"><button class="waves-effect waves-light btn"
+                type="button">Edit</button></a>
+        <a href="{% url 'employeedelete' id=emp.id %}"><button class="waves-effect waves-light btn"
+                type="button">X</button></a><br>
+        {% endfor %}<br>
+        <b>Create a new Employee:</b><br><br>
+        {{ form }}
+        <div class="row center">
+            <input class="btn-large waves-effect waves-light orange" type="submit" value="save" />
+        </div>
+    </div>
+</form>
+{% endblock %}

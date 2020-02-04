@@ -1,0 +1,16 @@
+{% extends "menuserve/header.html" %}
+{% block title %}Create order{% endblock %}
+{% block content %}
+<div class="container">
+    <form method="POST">{% csrf_token %}
+        <h5>Create order</h5>
+        Items: {{form.order_items}}<br>
+        Quantity: {{form.quantity}}<br>
+        Store: {{form.store}}<br>
+        Logged in as: {{ user }}<br><br>
+        <a href="{% url 'orderhistory' %}"><button class="btn-large waves-effect waves-light orange">Confirm
+                Order</button></a>
+        <a href="{% url 'index'%}"><button class="btn-large waves-effect waves-light orange">Cancel</button></a>
+    </form>
+</div><br><br>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% include 'menuserve/header.html' %}
+{% block content %}
+<title>Create Item</title>
+<form method="POST"> {% csrf_token %}
+    <div class="container">
+        <h6>Item Create</h6>
+        {{ form.as_p  }}<br>
+        <div class="row center">
+            <input class="btn-large waves-effect waves-light orange" type="submit" value="save" />
+        </div>
+    </div>
+</form>
+{% endblock %}

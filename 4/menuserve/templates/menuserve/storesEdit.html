@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% include 'menuserve/header.html'  %}
+<form method="POST"> {% csrf_token %}
+    <div class="container">
+        <br>
+        {% for store in stores %}
+        {{ store }}
+        <a href= "{% url 'storeedit' id=store.id %}"><button class="waves-effect waves-light btn" type="button">Edit</button></a>
+        <a href= "{% url 'storedelete' id=store.id %}"><button class="waves-effect waves-light btn" type="button">X</button></a><br>
+        {% endfor %}<br>
+        <b>Create a new Store:</b><br><br>
+        {{ form }}
+        <div class="row center">
+            <input class="btn-large waves-effect waves-light orange" type="submit" value="save" />
+        </div>
+    </div>
+</form>

@@ -1,0 +1,43 @@
+{% extends "menuserve/header.html" %}
+{% block title %}Alan's MenuServer Restaurant!{% endblock %}
+{% load staticfiles %}
+{% block content %}
+<div class="container">
+    <h3 class="header center orange-text">A perfect blend of taste, quality and price</h3>
+    <div class="row center">
+        <img class="circle responsive-img" src="{% static 'media/bf1.jpeg' %}">
+        <img class="circle responsive-img" src="{% static 'media/bf2.jpeg' %}">
+        <img class="circle responsive-img" src="{% static 'media/bf3.jpeg' %}">
+        <h6 class="header col s12 bold">Today's Special</h6>
+        <h7 class="header col s12 light"><i>Order Timings </i> <b>|</b> <i>7:00 AM to 12:00 PM</i></h5>
+            </h6>
+            <hr>
+    </div>
+    <div class="items-list">
+        <ol>
+            {% if posts %}
+            {% for post in posts %}
+            <li>
+                <p class="border-list">
+                    {% if post.image %}
+                    <img src="{{ post.image.url }}" width="120" />
+                    {% endif %}<br>
+                    <em>{{ post.item_name }} ...................... $ {{ post.price }}</em><br>
+                    {{ post.content_description }}
+                </p>
+            </li>
+            {% endfor %}
+        </ol>
+        {% endif %}
+    </div>
+    {% if not request.user.is_anonymous %}
+    <div class="row center">
+        <a href="{% url 'addorder' %}" id="download-button" class="btn-large waves-effect waves-light orange">Order
+            Now</a>
+        {% endif %}
+    </div>
+    <br><br>
+    </form>
+</div>
+</div>
+{% endblock %}

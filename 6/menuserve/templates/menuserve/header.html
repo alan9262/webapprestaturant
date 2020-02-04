@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <!--SOURCE: Materialize Starter Template -- CSS  -->
+    {% load staticfiles %}
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/init.js' %}"></script>
+    <title>{% block title %}Alan's MenuServer Restaurant!{% endblock %}</title>
+</head>
+
+<body>
+    {% block navbar %}
+    <nav class="header-restaurant" role="navigation">
+        <div>
+            <a href="#" class="custom-header">Alan's MenuServer Restaurant</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url 'about' %}">About</a></li>
+                {% if not request.user.is_anonymous %}
+                <li class="tab"><a href="{% url 'manage' %}"><b>Manage</b></a></li>
+                <li class="tab">{{ request.user }}</li>
+                <li><a href="{% url 'user_logout' %}">Logout</a></li>
+                {% else %}
+                <li class="tab"><a href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+            </ul>
+            <br>
+        </div>
+    </nav>
+    <form action="#" method="POST">
+        <nav class="nav-extended">
+            <div class="page-footer orange">
+                <ul class="tabs tabs-transparent">
+                    <li class="tab"><a class="active" href="{% url 'index' %}"><b>Home</b></a></li>
+                    {% if not request.user.is_anonymous %}
+                    <li class="tab"><a class="active" href="{% url 'order' %}"><b>Order</b></a></li>
+                    <li class="tab"><a class="active" href="{% url 'orderhistory' %}"><b>Order history</b></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </form>
+    {% endblock %}
+    {% block content %}{% endblock %}
+</body><br><br><br>
+{% block footer %}
+<footer class="page-footer orange">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Company Bio</h5>
+                <p class="grey-text text-lighten-4">This is a website for the course Web application development.
+                    The
+                    materialize css is inspired by the starter- template provided by <a
+                        href="http://materializecss.com">Materialize.</a></p>
+</footer>
+<!-- SOURCE: Materialize Starter Template -- Scripts-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/init.js' %}"></script>
+{% endblock %}
+
+</html>
